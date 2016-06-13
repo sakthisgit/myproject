@@ -14,8 +14,6 @@ def fileread():
                     print "%s said %s " %(role, line_spoken)
             except ValueError:
                 print 'Value has not been processed'
-                
-        
     except IOError:
         print 'File Not Found'
     finally:
@@ -60,10 +58,24 @@ def filewrite():
 
 
 """
+        Example for With read/write in files
+"""
+def withfile():
+    print "With File Open Example "
+    try:
+        with open('sketch.txt') as data:
+            for each_line in data:
+                print each_line
+    except IOError as ioerr:
+        print 'File Not Found', ioerr
+
+
+
+"""
 
         Test the program
 
 """
 if __name__== '__main__':
     #os.chdir('/mnt/workspace/Myworkspace/myproject/pymodules')
-    filewrite()
+    withfile()
