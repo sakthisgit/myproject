@@ -7,7 +7,7 @@ def print_list(mylist, level=0):
     """ Print the Python List """
     for each_item in mylist:
         if isinstance(each_item, list):
-            print_list(each_item,level)
+            print_list(each_item,level+1)
         else:
             for tab_stop in range(level):
                 print("\t", end='')

@@ -3,15 +3,13 @@
 	Description: Print the List
 """
 
-def print_list(mylist):
+def print_list(mylist, level=0):
     """ Print the Python List """
     for each_item in mylist:
         if isinstance(each_item, list):
-            print_list(each_item)
+            print_list(each_item,level+1)
         else:
+            for tab_stop in range(level):
+                print("\t", end='')
             print(each_item)
 
-
-def printv2(mylist):
-    """ Improved Version of Print list """
-    printf("The V2 Function is under developing")
