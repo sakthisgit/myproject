@@ -46,8 +46,6 @@ def filewrite():
         data.close()         
     except IOError:
         print 'File Not Found'
-    print "Man Said %s"%(man)
-    print "Others said %s"%(other)
     try:
         outfile=open('output.txt','w')        
 	for i in (man+other):
