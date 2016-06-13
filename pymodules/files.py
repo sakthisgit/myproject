@@ -41,11 +41,11 @@ def filewrite():
                         man.append(line_spoken)
                     elif role == 'Other Man':
                         other.append(line_spoken)
-            except ValueError:
-                print 'Value Parsing  Error'
+            except ValueError as verr:
+                print 'Value Parsing  Error',verr
         data.close()         
-    except IOError:
-        print 'File Not Found'
+    except IOError as ioerr:
+        print 'File Not Found',ioerr
     try:
         outfile=open('output.txt','w')        
 	for i in (man+other):
@@ -54,7 +54,8 @@ def filewrite():
     except IOError:
         print "Error"
     finally:
-        outfile.close()
+    	 if outfile in locals():
+		 outfile.close()
 
 
 
@@ -64,5 +65,5 @@ def filewrite():
 
 """
 if __name__== '__main__':
-    os.chdir('/mnt/workspace/Myworkspace/myproject/pymodules')
+    #os.chdir('/mnt/workspace/Myworkspace/myproject/pymodules')
     filewrite()
