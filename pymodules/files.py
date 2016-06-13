@@ -41,19 +41,19 @@ def filewrite():
                         other.append(line_spoken)
             except ValueError as verr:
                 print 'Value Parsing  Error',verr
-        data.close()         
+        data.close()
     except IOError as ioerr:
         print 'File Not Found',ioerr
     try:
-        outfile=open('output.txt','w')        
+        outfile=open('output.txt','w')
 	for i in (man+other):
-	 print>>outfile, i
+        print>>outfile, i
 
     except IOError:
         print "Error"
     finally:
-    	 if outfile in locals():
-		 outfile.close()
+        if outfile in locals():
+            outfile.close()
 
 
 
@@ -77,5 +77,5 @@ def withfile():
 
 """
 if __name__== '__main__':
-    #os.chdir('/mnt/workspace/Myworkspace/myproject/pymodules')
+    os.chdir('/mnt/workspace/Myworkspace/myproject/pymodules')
     withfile()
